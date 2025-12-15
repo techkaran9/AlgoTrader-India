@@ -1,86 +1,62 @@
-# AlgoTrader India: AI-Powered Options Trading Simulator
+# AlgoTrader India: Automated Live Trading System
 
-AlgoTrader India is a sophisticated paper trading platform for the Indian derivatives market. It uses the Google Gemini API to suggest, simulate, and analyze trading strategies for Nifty and Bank Nifty options, providing a realistic and insightful virtual trading experience.
-
----
-
-## 🚀 Live Demo
-
-[Click Here for live demo](https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2216hdPX5KB0f8s4rTyiSi8ZwcyQf5gbzHC%22%5D,%22action%22:%22open%22,%22userId%22:%22116836928984612143272%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing)
+AlgoTrader India is a fully automated trading platform for Indian options markets. It integrates directly with the Grow broker API to execute live trades on Nifty and Bank Nifty options based on your configured strategies and risk parameters.
 
 ---
 
-## 📸 Screenshots
+## Features
 
-  <img width="1873" height="970" alt="image" src="https://github.com/user-attachments/assets/85fd4c94-ad7e-4b72-a66e-28526f5f965e" />
-<img width="1850" height="825" alt="image" src="https://github.com/user-attachments/assets/812ab641-c8d7-4d42-ba0c-2ba25acd698a" />
+### 1. Live Trading System
+- **Real Broker Integration**: Direct connection to Grow broker for live order execution
+- **Automated Execution**: Set up strategies that execute automatically based on market conditions
+- **Real-time Market Data**: Live price feeds for NIFTY 50 and BANK NIFTY indices
+- **Position Tracking**: Monitor all open positions with real-time P&L updates
 
-    ```
+### 2. Comprehensive Risk Management
+- **Daily Loss Limits**: Automatic trading suspension when daily loss threshold is reached
+- **Position Size Controls**: Set maximum capital per position
+- **Position Count Limits**: Control the number of concurrent open positions
+- **Auto-trade Toggle**: Enable/disable automated trading with one click
 
----
+### 3. Secure Authentication
+- **Email/Password Authentication**: Secure user account management via Supabase
+- **Encrypted API Credentials**: Broker API keys stored securely in database
+- **Session Management**: Automatic token refresh and session handling
 
-
-## ✨ Key Features
-
-### 1. Live Market Dashboard
-- **Real-time Status**: View the current status of the National Stock Exchange (NSE), indicating whether the market is OPEN or CLOSED.
-- **Live Price Tickers**: Track simulated live prices for the **NIFTY 50** and **BANK NIFTY** indices.
-- **Dynamic Updates**: Prices, day's change, and percentage change are updated every few seconds during simulated market hours (9:15 AM - 3:30 PM IST, weekdays) to mimic a live trading environment.
-
-### 2. AI-Powered Analysis & Strategy Generation
-Our platform integrates the Google Gemini API to provide intelligent trading insights:
-
-- **🤖 AI Strategy Suggester**: Analyzes current market sentiment and suggests the most suitable options strategy (e.g., *Long Straddle, Iron Condor*). Provides a detailed rationale, key parameters (market view, suggested strikes, stop-loss), and potential risks.
-- **🔍 AI Strategy Finder**: Users can input their specific risk-reward profile by defining a **Target Profit** and **Max Acceptable Loss**. The AI then scans the market to find up to three strategies that fit these precise criteria.
-- **📈 AI Top 5 Picks**: Delivers a curated list of the top 5 most promising intraday option trade ideas. Each pick includes the specific instrument, action (Buy/Sell), estimated entry price, capital required, and potential profit/loss.
-
-### 3. Advanced Strategy Simulation
-- **Intraday Backtesting**: Select any AI-suggested or found strategy to run an instant simulation against today's market conditions.
-- **Performance Visualization**:
-    - **Today's P/L**: An interactive line chart visualizes the hypothetical intraday profit and loss fluctuation.
-    - **7-Day Historical Performance**: A beautifully designed bar chart shows the strategy's simulated performance over the last 7 market working days, helping you understand its consistency.
-- **Detailed Analytics**: The simulation provides crucial metrics, including the final P/L amount (₹) and percentage (%), estimated capital required, and maximum potential loss.
-- **AI Commentary**: Get a brief, AI-generated analysis explaining the "why" behind the simulated performance.
-
-### 4. Interactive Paper Trading Portfolio
-- **Build Your Portfolio**: Add any AI-suggested strategy or top pick to your virtual portfolio with a single click.
-- **Live P/L Tracking**: All open positions are tracked in real-time, with unrealized P/L updating dynamically based on simulated market movements.
-- **Comprehensive Summary**: The portfolio dashboard provides a clear overview of your total capital deployed, realized P/L, unrealized P/L, and total P/L.
-- **Position Management**: Easily manage your risk by exiting individual positions, closing all "picks" or "strategies" at once, or exiting all positions entirely.
+### 4. Database-Backed Operations
+- **Position History**: Complete record of all trades and positions
+- **System Logs**: Detailed logging of all trading activities and errors
+- **Strategy Storage**: Save and manage multiple trading strategies
+- **Settings Persistence**: User preferences stored securely
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
--   **Frontend**: React with TypeScript
--   **Styling**: Tailwind CSS for a modern, responsive UI
--   **AI & Backend Logic**: Google Gemini API (`@google/genai`)
--   **Charting**: Recharts for interactive and beautiful data visualizations
+- **Frontend**: React 19 with TypeScript
+- **Styling**: Tailwind CSS
+- **Database**: Supabase (PostgreSQL)
+- **Authentication**: Supabase Auth
+- **Broker API**: Grow API integration
+- **Charts**: Recharts for data visualization
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (v16 or higher)
 - npm or yarn
-- Google Gemini API key
+- Grow broker account with API access
 
 ### Installation
 
-1. Clone the repository and install dependencies:
+1. Install dependencies:
 ```bash
 npm install
 ```
 
-2. Set up your environment variables:
-   - Open the `.env` file in the root directory
-   - Replace `your_gemini_api_key_here` with your actual Gemini API key
-   - Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
-
-```env
-VITE_GEMINI_API_KEY=your_actual_api_key_here
-```
+2. The Supabase database is pre-configured with all necessary tables for trading operations.
 
 3. Run the development server:
 ```bash
@@ -94,6 +70,75 @@ npm run build
 
 ---
 
-## ⚠️ Disclaimer
+## Setup Guide
 
-AlgoTrader India is a **simulation tool** created for educational and demonstrational purposes only. All market data is simulated, and all trades are virtual (paper trades). The information and strategies provided by the AI are hypothetical and **do not constitute financial advice**. Trading in derivatives involves substantial risk, and you should consult with a qualified financial advisor before making any real investment decisions.
+### Step 1: Create Account
+1. Open the application
+2. Click "Sign up"
+3. Enter your email and password
+4. Click "Create Account"
+
+### Step 2: Configure Grow Broker
+1. Log in to your Grow broker account
+2. Navigate to Settings → API Management
+3. Generate API credentials (API Key and API Secret)
+4. In AlgoTrader, go to "Grow Broker Configuration"
+5. Enter your API Key and API Secret
+6. Click "Save Credentials"
+
+### Step 3: Configure Risk Settings
+1. Navigate to "Risk Management"
+2. Set your risk parameters:
+   - **Max Daily Loss**: Maximum loss allowed per day (₹)
+   - **Max Position Size**: Maximum capital per position (₹)
+   - **Max Open Positions**: Maximum number of concurrent positions
+3. Toggle "Auto Trading" to enable automated execution
+4. Click "Save Settings"
+
+### Step 4: Monitor Your Trading
+- View live market data for NIFTY and BANK NIFTY
+- Monitor open positions in real-time
+- Track P&L for each position
+- Exit positions manually when needed
+
+---
+
+## Safety Features
+
+### Automated Risk Controls
+- **Circuit Breakers**: Automatic trading halt on daily loss limit
+- **Position Limits**: Prevents over-exposure to market
+- **Real-time Monitoring**: Continuous position P&L tracking
+- **Manual Override**: Ability to exit any position instantly
+
+### Security
+- **Encrypted Credentials**: API keys encrypted at rest
+- **Row Level Security**: Database access restricted to user's own data
+- **Session Management**: Automatic token expiry and refresh
+- **Audit Logs**: Complete record of all trading activities
+
+---
+
+## Important Disclaimers
+
+### Risk Warning
+- This system executes **REAL TRADES** with **REAL MONEY**
+- Options trading involves substantial risk of loss
+- Past performance does not guarantee future results
+- You can lose more than your initial investment
+- Only trade with money you can afford to lose
+
+### Regulatory Compliance
+- Ensure you comply with all local trading regulations
+- Understand tax implications of your trading activity
+- Maintain proper records for regulatory reporting
+
+### System Reliability
+- Monitor your positions regularly
+- Have backup plans for system downtime
+- Understand that technical issues can occur
+- Never rely solely on automated systems
+
+---
+
+**Remember**: Trading involves risk. Never invest more than you can afford to lose. This system is provided as-is without any guarantees of profitability or reliability.

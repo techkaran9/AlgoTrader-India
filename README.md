@@ -59,6 +59,41 @@ Our platform integrates the Google Gemini API to provide intelligent trading ins
 
 ---
 
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- Google Gemini API key
+
+### Installation
+
+1. Clone the repository and install dependencies:
+```bash
+npm install
+```
+
+2. Set up your environment variables:
+   - Open the `.env` file in the root directory
+   - Replace `your_gemini_api_key_here` with your actual Gemini API key
+   - Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+
+```env
+VITE_GEMINI_API_KEY=your_actual_api_key_here
+```
+
+3. Run the development server:
+```bash
+npm run dev
+```
+
+4. Build for production:
+```bash
+npm run build
+```
+
+---
+
 ## ⚠️ Disclaimer
 
 AlgoTrader India is a **simulation tool** created for educational and demonstrational purposes only. All market data is simulated, and all trades are virtual (paper trades). The information and strategies provided by the AI are hypothetical and **do not constitute financial advice**. Trading in derivatives involves substantial risk, and you should consult with a qualified financial advisor before making any real investment decisions.
